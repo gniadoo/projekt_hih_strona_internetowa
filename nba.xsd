@@ -1,0 +1,192 @@
+ <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+ <xsd:annotation>
+	<xsd:documentation xml:lang="pl">
+		XML Schema do pliku nba.
+	</xsd:documentation>
+ </xsd:annotation>
+ 
+	<xsd:element name="Druzyny" type="druzyny_typ"/>
+	<xsd:element name="Druzyna" type="druzyna_typ"/>
+	<xsd:element name="Nazwa" type="nazwa_typ"/>
+	<xsd:element name="Trener" type="trener_typ"/>
+	<xsd:element name="Data_zal" type="data_zal_typ"/>
+	<xsd:element name="Zawodnicy" type="zawodnicy_typ"/>
+	<xsd:element name="Zawodnik_obecny" type="zawodnik_obecny_typ"/>
+	<xsd:element name="Zawodnik_legenda" type="zawodnik_legenda_typ"/>
+	<xsd:element name="Imie" type="imie_typ"/>
+	<xsd:element name="Nazwisko" type="nazwisko_typ"/>
+	<xsd:element name="Kraj" type="kraj_typ"/>
+	<xsd:element name="Hala" type="hala_typ"/>
+	<xsd:element name="Data_bud" type="data_bud_typ"/>	
+	<xsd:attribute name="Miasto" type="xsd:string" />
+	<xsd:attribute name="Pseudonim" type="xsd:string" />
+	<xsd:attribute name="Konferencja" >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="Wschodnia"/>
+				<xsd:enumeration value="Zachodnia"/>
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:attribute>
+	<xsd:group name="Staty">
+		<xsd:sequence>
+			<xsd:element name="Punkty" type="xsd:int"/>
+			<xsd:element name="Zbiorki" type="xsd:int"/>
+			<xsd:element name="Asysty" type="xsd:int"/>
+		</xsd:sequence>
+	</xsd:group>	
+		<xsd:complexType name="druzyny_typ">
+			<xsd:sequence>
+				<xsd:element ref="Druzyna" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:complexType name="druzyna_typ">
+			<xsd:sequence>
+				<xsd:element ref="Nazwa"/>
+				<xsd:element ref="Trener"/>
+				<xsd:element ref="Data_zal"/>
+				<xsd:element ref="Zawodnicy"/>
+				<xsd:element ref="Hala"/>
+				<xsd:element name="Sezon" >
+					<xsd:complexType>						
+						<xsd:sequence>
+							<xsd:element name="Record">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:pattern value="[0-9]{2}-[0-9]{2}"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="Rok" type="xsd:int" />
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Linki" type="linki_typ" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="Zdjecie" type="zdjecie_typ" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute ref="Miasto" />
+			<xsd:attribute ref="Konferencja"/>
+		</xsd:complexType>
+ 
+		<xsd:simpleType name="nazwa_typ">
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="50" />
+			</xsd:restriction>
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="imie_typ">
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="50" />
+			</xsd:restriction>		
+		</xsd:simpleType>
+		
+		<xsd:simpleType name="nazwisko_typ">
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="50" />
+			</xsd:restriction>		
+		</xsd:simpleType>	
+
+		<xsd:simpleType name="kraj_typ">
+			<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="USA" />
+					<xsd:enumeration value="Kanada" />
+					<xsd:enumeration value="Niemcy" />
+					<xsd:enumeration value="Francja" />
+					<xsd:enumeration value="Hiszpania" />
+					<xsd:enumeration value="Grecja" />
+					<xsd:enumeration value="Brazylia" />
+					<xsd:enumeration value="Meksyk" />
+			</xsd:restriction>		
+		</xsd:simpleType>			
+		
+		<xsd:simpleType name="data_zal_typ">
+			<xsd:restriction base="xsd:date"/>	
+		</xsd:simpleType>
+
+		<xsd:simpleType name="data_bud_typ">
+			<xsd:restriction base="xsd:date"/>	
+		</xsd:simpleType>		
+		
+		<xsd:complexType name="trener_typ">
+			<xsd:sequence>
+				<xsd:element ref="Imie"/>
+				<xsd:element ref="Nazwisko"/>
+				<xsd:element ref="Kraj"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="zawodnicy_typ">
+			<xsd:sequence>
+				<xsd:element ref="Zawodnik_obecny"/>
+				<xsd:element ref="Zawodnik_legenda"/>
+			</xsd:sequence>
+		</xsd:complexType>
+ 
+		<xsd:complexType name="zawodnik_obecny_typ">
+			<xsd:sequence>
+				<xsd:element ref="Imie"/>
+				<xsd:element ref="Nazwisko"/>
+				<xsd:element ref="Kraj"/>
+				<xsd:element name="Statystyki">
+					<xsd:complexType>						
+						<xsd:sequence>							
+							<xsd:group ref="Staty"/>				
+						</xsd:sequence>	
+						<xsd:attribute name="Rok" type="xsd:int" />
+						<xsd:attribute name="MVP" type="xsd:string"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute ref="Pseudonim" />
+		</xsd:complexType>
+		
+		<xsd:complexType name="zawodnik_legenda_typ">
+			<xsd:sequence>
+				<xsd:element ref="Imie"/>
+				<xsd:element ref="Nazwisko"/>
+				<xsd:element ref="Kraj"/>
+				<xsd:element name="Tytuly_mistrza">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:int"/>						
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="Tytuly_mistrza_lata">
+					<xsd:simpleType>
+						<xsd:list itemType="xsd:int"/>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>	
+
+		<xsd:complexType name="hala_typ">
+			<xsd:sequence>
+				<xsd:element ref="Nazwa"/>
+				<xsd:element ref="Data_bud"/>
+				<xsd:element name="Pojemnosc">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:long">
+							<xsd:minExclusive value="1"/>
+							<xsd:maxExclusive value="9999999999"/>
+						</xsd:restriction>	
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="linki_typ">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="href" type="xsd:anyURI" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="zdjecie_typ">
+		<xsd:attribute name="src" type="xsd:string"/>
+	</xsd:complexType>
+ 
+ </xsd:schema>

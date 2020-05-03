@@ -1,0 +1,173 @@
+@keyframes animacja
+{
+	0%{transform:rotate(0deg);  }
+	50%{transform:rotate(360deg); }
+	100%{transform:rotate(0deg); } 
+}
+@keyframes animacja1
+{
+	 0%   { left:0px;}
+     50%  {left:700px;}
+     100% {left:0px;}
+}
+
+
+body
+{
+	background-color:#201a15;
+	font-family:sans-serif;
+}
+#pojemnik
+{
+	width:1200px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	
+}
+#naglowek
+{
+	color:#e65617;
+	margin-top:30px;
+	margin-bottom:30px;
+	letter-spacing:2px;
+	font-size:25px;
+	height:100px;
+	width:1200px;
+	
+}
+#menu
+{
+	background-color:#e65617;
+	padding: 10px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	border:3px outset grey;
+	font-weight:bold;
+	margin-bottom:20px;
+	height:80px;
+	
+	
+}
+#tresc
+{
+	margin-top:20px;
+	background-color:#cfb09c;
+	padding:30px;
+	font-size:20px;
+	border:3px outset grey;
+	width: 90%;
+	margin: 0 auto;
+}
+#stopka
+{
+	text-align:center;
+	padding:10px;
+	background-color:#e65617;
+	margin-top:20px;
+	border:3px outset grey;
+	font-weight:bold;
+}
+.option
+{
+	float: left;
+	height:25px;
+	font-size:28px;
+	padding:10px;
+	text-decoration:none;
+	display:block;
+	list-style-type:none;
+	width:250px;
+	background-color:#e65617;
+}
+.option:hover
+{
+	background-color:orange;
+	cursor:pointer;
+	padding:10px;
+}
+#naglowekL
+{
+	float:left;
+	width:400px;
+	height:100px;
+	
+}
+#naglowekP1
+{
+	float:right;
+	width:800px;
+	height:100px;
+
+	
+	}
+	#naglowekP2
+{
+   width: 100px;
+    height: 100px;
+    position: relative;
+    animation: animacja1 10s linear;
+    animation-iteration-count: infinite;
+	
+	}
+.anim
+{
+	width: 95px;
+    height: 95px;
+    position: relative;
+	animation: animacja 10s linear;
+	animation-iteration-count: infinite;
+}
+
+ ol > li > ul {
+        display:none;
+        list-style-type:none;
+        padding:0;        
+      }
+ ol > li:hover > ul {
+        display:block;
+      }
+a
+{
+	text-decoration:none;
+	color:black;
+}
+.a1
+{
+	color:blue;
+}
+.tab1
+{
+	border: 1px solid black;
+	text-align:center;
+	width:90%;
+	margin:auto;
+	
+}
+td{
+	border: 1px solid black;
+}
+.tr1
+{
+	background-color:#e65617;
+	text-align:center;
+	border: 2px solid black;
+}
+.tab2
+{
+	margin:auto;
+	padding:30px;
+	text-align:justify;
+	font-size: 25px;
+}
+h2
+{
+	text-align: center;
+	font-size:50px;
+}
+.td2
+{
+	border:0px;
+}
+

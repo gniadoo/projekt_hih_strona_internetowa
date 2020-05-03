@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<Druzyny>
+	<Druzyna Miasto="Boston" Konferencja="Wschodnia">
+		<Nazwa>Boston Celtics</Nazwa>
+		<Trener>
+			<Imie>Brad</Imie>
+			<Nazwisko>Stevens</Nazwisko>
+			<Kraj>USA</Kraj>
+		</Trener>
+		<Data_zal>1946-06-06</Data_zal>
+		<Zawodnicy>
+			<Zawodnik_obecny Pseudonim="Uncle Drew">
+				<Imie>Kyrie</Imie>
+				<Nazwisko>Irving</Nazwisko>
+				<Kraj>USA</Kraj>
+				<Statystyki Rok="2016" MVP="nie">
+					<Punkty>157</Punkty>
+					<Zbiorki>56</Zbiorki>
+					<Asysty>78</Asysty>
+				</Statystyki>
+			</Zawodnik_obecny>
+			<Zawodnik_legenda>
+				<Imie>Larry</Imie>
+				<Nazwisko>Bird</Nazwisko>
+				<Kraj>USA</Kraj>
+				<Tytuly_mistrza>3</Tytuly_mistrza>
+				<Tytuly_mistrza_lata>1981 1984 1986</Tytuly_mistrza_lata>
+			</Zawodnik_legenda>
+		</Zawodnicy>
+		<Hala>
+			<Nazwa>TD-Garden</Nazwa>
+			<Data_bud>1995-09-30</Data_bud>
+			<Pojemnosc>18624</Pojemnosc>
+		</Hala>
+		<Sezon Rok="2016">
+			<Record>53-21</Record>
+		</Sezon>
+		<Linki href="https://pl.wikipedia.org/wiki/Boston_Celtics"> https://pl.wikipedia.org/wiki/Boston_Celtics</Linki>
+		<Zdjecie src="boston.jpg"></Zdjecie>
+	</Druzyna>
+	
+	<Druzyna Miasto="Cleveland" Konferencja="Wschodnia">
+		<Nazwa>Cleveland Cavaliers</Nazwa>
+		<Trener>
+			<Imie>Tyronn</Imie>
+			<Nazwisko>Lue</Nazwisko>
+			<Kraj>Meksyk</Kraj>
+		</Trener>
+		<Data_zal>1946-06-06</Data_zal>
+		<Zawodnicy>
+			<Zawodnik_obecny Pseudonim="The King">
+				<Imie>LeBron</Imie>
+				<Nazwisko>James</Nazwisko>
+				<Kraj>USA</Kraj>
+				<Statystyki Rok="2016" MVP="nie">
+					<Punkty>203</Punkty>
+					<Zbiorki>90</Zbiorki>
+					<Asysty>59</Asysty>
+				</Statystyki>
+			</Zawodnik_obecny>
+			<Zawodnik_legenda>
+				<Imie>LeBron</Imie>
+				<Nazwisko>James</Nazwisko>
+				<Kraj>USA</Kraj>
+				<Tytuly_mistrza>3</Tytuly_mistrza>
+				<Tytuly_mistrza_lata>2012 2013 2016</Tytuly_mistrza_lata>
+			</Zawodnik_legenda>
+		</Zawodnicy>
+		<Hala>
+			<Nazwa>Quicken Loans Arena</Nazwa>
+			<Data_bud>1994-10-17</Data_bud>
+			<Pojemnosc>20563</Pojemnosc>
+		</Hala>
+		<Sezon Rok="2016">
+			<Record>51-31</Record>
+		</Sezon>
+		<Linki href="https://pl.wikipedia.org/wiki/Cleveland_Cavaliers"> https://pl.wikipedia.org/wiki/Cleveland_Cavaliers</Linki>
+		<Zdjecie src="cavs.jpg"></Zdjecie>
+	</Druzyna>
+	
+	<Druzyna Miasto="San Francisco" Konferencja="Zachodnia">
+		<Nazwa>Golden State Warriors</Nazwa>
+		<Trener>
+			<Imie>Steve</Imie>
+			<Nazwisko>Kerr</Nazwisko>
+			<Kraj>USA</Kraj>
+		</Trener>
+		<Data_zal>1946-03-27</Data_zal>
+		<Zawodnicy>
+			<Zawodnik_obecny Pseudonim="Splash Brother">
+				<Imie>Stephen</Imie>
+				<Nazwisko>Curry</Nazwisko>
+				<Kraj>USA</Kraj>
+				<Statystyki Rok="2016" MVP="tak">
+					<Punkty>229</Punkty>
+					<Zbiorki>48</Zbiorki>
+					<Asysty>101</Asysty>
+				</Statystyki>
+			</Zawodnik_obecny>
+			<Zawodnik_legenda>
+				<Imie>Wilt</Imie>
+				<Nazwisko>Chamberlain</Nazwisko>
+				<Kraj>USA</Kraj>
+				<Tytuly_mistrza>2</Tytuly_mistrza>
+				<Tytuly_mistrza_lata>1967 1972</Tytuly_mistrza_lata>
+			</Zawodnik_legenda>
+		</Zawodnicy>
+		<Hala>
+			<Nazwa>Oracle Arena</Nazwa>
+			<Data_bud>1966-11-07</Data_bud>
+			<Pojemnosc>19596</Pojemnosc>
+		</Hala>
+		<Sezon Rok="2016">
+			<Record>67-15</Record>
+		</Sezon>
+		<Linki href="https://pl.wikipedia.org/wiki/Golden_State_Warriors"> https://pl.wikipedia.org/wiki/Golden_State_Warriors</Linki>
+		<Zdjecie src="gsw.jpg"></Zdjecie>
+	</Druzyna>
+</Druzyny>
+		

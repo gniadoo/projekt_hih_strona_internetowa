@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Druzyny">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Druzyna">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nazwa" type="xs:string" />
+              <xs:element name="Trener">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Imie" type="xs:string" />
+                    <xs:element name="Nazwisko" type="xs:string" />
+                    <xs:element name="Kraj" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Data_zal" type="xs:date" />
+              <xs:element name="Zawodnicy">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Zawodnik_obecny">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Imie" type="xs:string" />
+                          <xs:element name="Nazwisko" type="xs:string" />
+                          <xs:element name="Kraj" type="xs:string" />
+                          <xs:element name="Statystyki">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Punkty" type="xs:unsignedByte" />
+                                <xs:element name="Zbiorki" type="xs:unsignedByte" />
+                                <xs:element name="Asysty" type="xs:unsignedByte" />
+                              </xs:sequence>
+                              <xs:attribute name="Rok" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="MVP" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Pseudonim" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Zawodnik_legenda">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Imie" type="xs:string" />
+                          <xs:element name="Nazwisko" type="xs:string" />
+                          <xs:element name="Kraj" type="xs:string" />
+                          <xs:element name="Tytuly_mistrza" type="xs:unsignedByte" />
+                          <xs:element name="Tytuly_mistrza_lata" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Hala">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Nazwa" type="xs:string" />
+                    <xs:element name="Data_bud" type="xs:date" />
+                    <xs:element name="Pojemnosc" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Sezon">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Record" type="xs:string" />
+                  </xs:sequence>
+                  <xs:attribute name="Rok" type="xs:unsignedShort" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Linki">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="href" type="xs:string" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Zdjecie">
+                <xs:complexType>
+                  <xs:attribute name="src" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Miasto" type="xs:string" use="required" />
+            <xs:attribute name="Konferencja" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
